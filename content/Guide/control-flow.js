@@ -186,4 +186,60 @@ while (true) {
 <div class="alert alert-success">
     <strong>Next Steps:</strong> Now that you understand control flow, learn about <a href="#functions">Functions</a> to organize your code.
 </div>
+
+<h2>Match Expression</h2>
+
+<p>The <code>match</code> expression allows you to compare a value against multiple patterns and execute the corresponding arm. It functions like a switch statement found in other languages.</p>
+
+<h3>Syntax</h3>
+
+<pre><code>match &lt;expr&gt; {
+    &lt;pattern&gt; => &lt;body&gt;,
+    &lt;pattern&gt; => &lt;body&gt;,
+    _ => &lt;body&gt;
+}</code></pre>
+
+<p><code>&lt;expr&gt;</code> can be any expression (variable, literal, field access, function call, etc.). <code>&lt;pattern&gt;</code> can be a literal (<code>"hello"</code>, <code>42</code>, <code>true</code>, <code>null</code>) or <code>_</code> (wildcard, catches all). <code>&lt;body&gt;</code> can be a single expression or a block <code>{ stmts }</code>. Trailing commas are required after expression bodies (no braces) and optional after block bodies.</p>
+
+<h3>Basic Example</h3>
+
+<pre><code>let name = "John";
+
+let result = match name {
+    "Alice" => "Hello, Alice!",
+    "Bob" => "Hey, Bob!",
+    _ => "Nice to meet you!",
+};
+
+println(result); // "Nice to meet you!"</code></pre>
+
+<h3>Match with Blocks</h3>
+
+<pre><code>let value = 42;
+
+match value {
+    10 => {
+        println("Value is ten");
+    }
+    42 => {
+        println("Value is the answer");
+    }
+    _ => {
+        println("Value is something else");
+    }
+}</code></pre>
+
+<h3>How It Works</h3>
+
+<ol>
+    <li>The value expression is evaluated once.</li>
+    <li>Arms are checked in order. For literal patterns, the value is duplicated and compared via <code>==</code>. If equal, the arm body executes. If not, the next arm is tried.</li>
+    <li><code>_</code> (wildcard) always matches.</li>
+    <li>The match expression produces the value of the matching arm's body (last expression in the body).</li>
+    <li>If no arm matches, it's a runtime error.</li>
+</ol>
+
+<div class="alert alert-warning">
+    <strong>Limitation:</strong> Patterns only support literals and <code>_</code>. Struct destructuring, nested patterns, and or-patterns are not yet supported.
+</div>
 `;
