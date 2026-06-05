@@ -327,7 +327,7 @@ function highlightCode() {
         });
 
         // Keywords
-        const keywords = ['let', 'fn', 'if', 'else', 'return', 'struct', 'this',
+        const keywords = ['let', 'fn', 'if', 'else', 'return', 'struct', 'enum', 'this',
                           'import', 'while', 'for', 'in', 'break', 'continue',
                           'true', 'false', 'null', 'try', 'catch', 'finally', 'async', 'await', 'future',
                           'match'];
@@ -343,6 +343,12 @@ function highlightCode() {
         html = html.replace(
             /\b(\d+)\b/g,
             "<span class='code-number'>$1</span>"
+        );
+
+        // Enum variants (PascalCase identifiers)
+        html = html.replace(
+            /\b([A-Z][a-zA-Z0-9_]*)\b/g,
+            "<span class='code-enum-variant'>$1</span>"
         );
 
         // Functions

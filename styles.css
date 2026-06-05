@@ -25,6 +25,7 @@
     --code-number-color: #005cc5;
     --code-comment-color: #6a737d;
     --code-function-color: #6f42c1;
+    --code-enum-variant-color: #008080;
     --alert-link-color: #1a56db;
 }
 
@@ -58,6 +59,7 @@ body.dark-theme {
     --code-number-color: #79c0ff;
     --code-comment-color: #8b949e;
     --code-function-color: #d2a8ff;
+    --code-enum-variant-color: #56d4dd;
     --alert-link-color: #93c5fd;
 }
 
@@ -338,6 +340,11 @@ pre code {
 
 .code-function {
     color: var(--code-function-color);
+    font-weight: 600;
+}
+
+.code-enum-variant {
+    color: var(--code-enum-variant-color);
     font-weight: 600;
 }
 
