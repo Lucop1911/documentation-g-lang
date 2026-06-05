@@ -239,7 +239,7 @@ match value {
     <li>If no arm matches, it's a runtime error.</li>
 </ol>
 
-<div class="alert alert-warning">
-    <strong>Limitation:</strong> Patterns only support literals and <code>_</code>. Struct destructuring, nested patterns, and or-patterns are not yet supported.
+<div class="alert alert-info">
+    <strong>Advanced Matching:</strong> The <code>match</code> expression also supports powerful pattern matching with <a href="#enums">Enums</a>, including destructuring and nested patterns.
 </div>
 `;

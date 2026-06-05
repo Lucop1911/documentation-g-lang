@@ -196,6 +196,22 @@ person.greet();  // Hello, I'm John
 println(person.name);  // John
 println(person.age);   // 30</code></pre>
 
+<h2>Enums</h2>
+
+<p>Enums allow you to define a type by enumerating its possible variants, which can carry data and be pattern-matched.</p>
+
+<pre><code>enum Result {
+    Ok(value),
+    Error(message)
+}
+
+let res = Result::Ok(200);
+
+match res {
+    Result::Ok(v) => println("Success: ", v),
+    Result::Error(m) => println("Failed: ", m),
+}</code></pre>
+
 <h2>User Input</h2>
 
 <p>Get input from the user with the <code>input()</code> function:</p>
@@ -279,6 +295,7 @@ while (true) {
         <li><a href="#data-types">Data Types</a> - Deep dive into types</li>
         <li><a href="#functions">Functions</a> - Advanced function usage</li>
         <li><a href="#structs">Structs</a> - Working with custom types</li>
+        <li><a href="#enums">Enums</a> - Working with variants and data</li>
         <li><a href="#io-functions">Built-in Functions</a> - All available built-in functions</li>
         <li><a href="#stdlib-io">Standard Library</a> - Explore the standard library modules</li>
     </ul>

@@ -104,6 +104,24 @@ fn multiply(a, b) {
 let p = Person { name: "Alice", age: 30 };
 p.greet();</code></pre>
 
+<h2>Enums</h2>
+
+<p>Enums allow you to define a type by enumerating its possible variants, which can carry data.</p>
+
+<pre><code>enum Status {
+    Pending,
+    Active(started_at),
+    Done { finished_at, result }
+}
+
+let s = Status::Active("2024-01-01");
+
+match s {
+    Status::Pending => println("Pending..."),
+    Status::Active(time) => println("Active since ", time),
+    Status::Done { finished_at, result } => println("Done at ", finished_at),
+}</code></pre>
+
 <h2>Modules</h2>
 
 <p>Code can be organized into modules and imported using the <code>import</code> keyword.</p>
